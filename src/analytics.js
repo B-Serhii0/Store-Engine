@@ -1,4 +1,5 @@
 import products from "../data/products.js";
+"use strict"
 
 function totalValue() {
     const result = products.reduce((acc, val) => acc + (val.price * val.quantity), 0)
