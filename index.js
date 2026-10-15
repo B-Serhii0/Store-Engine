@@ -21,6 +21,13 @@ console.log("Total inventory value:", totalValue());
 console.log("Potential profit:", potentialProfit());
 console.log("Low stock products (quantity <= 2):", shortageOfGoods());
 
+console.log("\n--- 📦 PRODUCTS GROUPED BY CATEGORY ---");
+const grouped = groupByCategory();
+for (const [category, items] of Object.entries(grouped)) {
+    console.log(`Category: ${category} (Items count: ${items.length})`);
+    console.table(items.map(item => ({ Name: item.name, Price: item.price, Qty: item.quantity })));
+}
+
 console.log("\n--- 🔍 SEARCH & CATALOG ---");
 console.log("Product with ID 3:", findProductById(3));
 console.log("Search results for 'keyboard':", searchProducts("keyboard"));
